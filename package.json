@@ -27,7 +27,9 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test tests/*.test.ts"
+    "test": "node --import tsx --test tests/*.test.ts",
+    "stage": "node scripts/stage-runtime.mjs",
+    "package": "npm run build && npm run stage && streamdeck pack com.recepemredev.hwinfo-monitor.sdPlugin -o dist -f --no-update-check"
   },
   "dependencies": {
     "@elgato/streamdeck": "^3.0.1",

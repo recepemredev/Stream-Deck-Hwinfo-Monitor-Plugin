@@ -15,3 +15,7 @@ indent_size = 2
 [package*.json]
 indent_style = space
 indent_size = 2
+
+# `streamdeck pack` rewrites the manifest without a final newline; match it so packaging leaves no diff.
+[*.sdPlugin/manifest.json]
+insert_final_newline = false
