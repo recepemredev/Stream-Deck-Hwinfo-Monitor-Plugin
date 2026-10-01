@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Derived Metric</title>
+	<link rel="stylesheet" href="pi.css">
+</head>
+<body>
+	<div class="field">
+		<label for="operation">Operation</label>
+		<div class="picker">
+			<select id="operation" data-setting="operation">
+				<option value="sum">Sum</option>
+				<option value="avg">Average</option>
+				<option value="max">Maximum</option>
+				<option value="min">Minimum</option>
+				<option value="delta">Delta (1 &minus; 2)</option>
+				<option value="percent">Percent (1 &divide; 2)</option>
+			</select>
+			<div class="hint">Delta and percent use readings 1 and 2. The others use all selected readings.</div>
+		</div>
+	</div>
+
+	<div class="field">
+		<label for="readingCount">Readings</label>
+		<select id="readingCount" data-setting="readingCount">
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+	</div>
+
+	<div class="field">
+		<label>Sensor</label>
+		<div class="slot-editor">
+			<div id="tabs" class="tabs"></div>
+			<div id="picker" class="picker"></div>
+		</div>
+	</div>
+
+	<div class="field">
+		<label for="preset">Preset</label>
+		<div class="picker">
+			<div class="inline">
+				<select id="preset"></select>
+				<button id="load-preset" type="button" class="button">Load</button>
+				<button id="delete-preset" type="button" class="button danger">Delete</button>
+			</div>
+			<div class="inline preset-save">
+				<input id="preset-name" type="text" maxlength="24" placeholder="Preset name">
+				<button id="save-preset" type="button" class="button">Save</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="fields"></div>
+
+	<script src="pi-common.js"></script>
+	<script src="sensor-picker.js"></script>
+	<script src="slot-tabs.js"></script>
+	<script src="display-fields.js"></script>
+	<script src="derived.js"></script>
+</body>
+</html>

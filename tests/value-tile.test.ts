@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { parseDerivedConfig } from "../src/actions/derived-metric.js";
 import { parseSensorConfig } from "../src/actions/sensor-reading.js";
 import { ValueTile } from "../src/actions/value-tile.js";
 import type { ThresholdRule } from "../src/alerts/threshold.js";
@@ -88,4 +89,38 @@ test("sensor tile draws with the chosen background", () => {
 	const stops = [...backgroundDef("#204080").matchAll(/stop-color="(#[0-9a-f]{6})"/g)].map((m) => m[1]);
 	assert.ok(stops.every((color) => h.last().includes(color)));
 	assert.ok(!h.last().includes("#171d26"));
+});
+
+test("derived tile computes and shows operation label", () => {
+	const raw = { operation: "sum", readingCount: 3, readingKeys: ["1:0:1", "1:0:2", "1:0:3"], decimals: "0" };
+	const h = harness(parseDerivedConfig, raw);
+	h.tile.refresh(snapshot(reading("1:0:1", 10), reading("1:0:2", 20), reading("1:0:3", 30)));
+	assert.match(h.last(), />60</);
+	assert.match(h.last(), />Sum</);
+	h.tile.refresh(snapshot(reading("1:0:1", 10), reading("1:0:2", 20))); // one reading missing
+	assert.match(h.last(), />--</);
+});
+
+test("derived percent uses % unit; needs two readings", () => {
+	const h = harness(parseDerivedConfig, { operation: "percent", readingCount: 2, readingKeys: ["1:0:1", "1:0:2"], decimals: "0" });
+	h.tile.refresh(snapshot(reading("1:0:1", 8, { unit: "GB" }), reading("1:0:2", 32, { unit: "GB" })));
+	assert.match(h.last(), />25</);
+	assert.match(h.last(), />%</);
+	const empty = harness(parseDerivedConfig, {});
+	empty.tile.refresh(snapshot());
+	assert.match(empty.last(), />Select sensors</);
+});
+
+test("derived tiles ignore alert rules", () => {
+	const d = harness(parseDerivedConfig, { operation: "max", readingCount: 2, readingKeys: ["1:0:1", "1:0:2"] }, [RULE]);
+	d.tile.refresh(snapshot(reading("1:0:1", 95), reading("1:0:2", 99)));
+	assert.doesNotMatch(d.last(), /stroke-width="4"/);
+});
+
+test("derived sums are converted to GB before calculating", () => {
+	const raw = { operation: "sum", readingCount: 2, readingKeys: ["1:0:1", "1:0:2"], units: "gb", decimals: "0" };
+	const h = harness(parseDerivedConfig, raw);
+	h.tile.refresh(snapshot(reading("1:0:1", 4096, { unit: "MB" }), reading("1:0:2", 4096, { unit: "MB" })));
+	assert.match(h.last(), />8</);
+	assert.match(h.last(), />GB</);
 });

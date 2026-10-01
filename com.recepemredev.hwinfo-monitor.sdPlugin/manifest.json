@@ -40,6 +40,21 @@
 			]
 		},
 		{
+			"UUID": "com.recepemredev.hwinfo-monitor.derived",
+			"Name": "Derived Metric",
+			"Tooltip": "Sum, average, max, min, delta or percent over HWiNFO readings.",
+			"Icon": "imgs/action",
+			"PropertyInspectorPath": "ui/derived.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/key"
+				}
+			]
+		},
+		{
 			"UUID": "com.recepemredev.hwinfo-monitor.settings",
 			"Name": "Settings",
 			"Tooltip": "HWiNFO connection status, poll rate and alert thresholds.",

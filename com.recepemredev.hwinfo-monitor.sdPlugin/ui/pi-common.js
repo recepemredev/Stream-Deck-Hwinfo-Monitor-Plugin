@@ -25,6 +25,17 @@ function fieldRow(labelText, control) {
 	return element("div", { className: "field" }, [element("label", { textContent: labelText }), control]);
 }
 
+/** Integer clamped to [min, max]; unusable input becomes `min` (mirrors parseCount in src/settings/fields.ts). */
+function clampCount(value, min, max) {
+	return Math.min(max, Math.max(min, Number(value) || min));
+}
+
+/** A `size`-long array of strings taken from `value`; missing or non-string entries become "". */
+function fixedStrings(value, size) {
+	const stored = Array.isArray(value) ? value : [];
+	return Array.from({ length: size }, (_, i) => (typeof stored[i] === "string" ? stored[i] : ""));
+}
+
 function selectControl(options, props = {}) {
 	const node = element("select", props);
 	for (const [value, name] of options) node.add(new Option(name, String(value)));
