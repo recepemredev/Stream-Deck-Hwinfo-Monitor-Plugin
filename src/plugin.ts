@@ -1,6 +1,7 @@
 import streamDeck from "@elgato/streamdeck";
 import { Composite } from "./actions/composite.js";
 import { DerivedMetric } from "./actions/derived-metric.js";
+import { Infobar } from "./actions/infobar.js";
 import { SensorReading } from "./actions/sensor-reading.js";
 import { SettingsAction } from "./actions/status.js";
 import { Poller } from "./hwinfo/poller.js";
@@ -23,6 +24,7 @@ globals.subscribe((settings) => poller.setIntervalMs(settings.pollMs));
 streamDeck.actions.registerAction(new SensorReading(poller, globals));
 streamDeck.actions.registerAction(new Composite(poller, globals));
 streamDeck.actions.registerAction(new DerivedMetric(poller, globals));
+streamDeck.actions.registerAction(new Infobar(poller, globals));
 streamDeck.actions.registerAction(new SettingsAction(poller, globals));
 
 poller.start();

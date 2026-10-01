@@ -70,6 +70,21 @@
 			]
 		},
 		{
+			"UUID": "com.recepemredev.hwinfo-monitor.infobar",
+			"Name": "Infobar Carousel",
+			"Tooltip": "Cycles HWiNFO readings on the Stream Deck Neo infobar.",
+			"Icon": "imgs/action",
+			"PropertyInspectorPath": "ui/infobar.html",
+			"Controllers": [
+				"Neo"
+			],
+			"States": [
+				{
+					"Image": "imgs/key"
+				}
+			]
+		},
+		{
 			"UUID": "com.recepemredev.hwinfo-monitor.settings",
 			"Name": "Settings",
 			"Tooltip": "HWiNFO connection status, poll rate and alert thresholds.",
