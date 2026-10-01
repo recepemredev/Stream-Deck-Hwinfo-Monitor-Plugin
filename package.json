@@ -1,0 +1,48 @@
+{
+  "name": "streamdeck-hwinfo-monitor",
+  "version": "0.1.0",
+  "description": "Live HWiNFO sensor readings, graphs and alerts on the Elgato Stream Deck.",
+  "keywords": [
+    "stream-deck",
+    "streamdeck-plugin",
+    "elgato",
+    "hwinfo",
+    "hardware-monitor",
+    "sensors",
+    "cpu-temperature",
+    "gpu-temperature"
+  ],
+  "license": "MIT",
+  "author": "Emre",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recepemredev/streamdeck-hwinfo-monitor.git"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.1",
+    "koffi": "^3.3.2"
+  },
+  "devDependencies": {
+    "@elgato/cli": "^1.10.1",
+    "@elgato/utils": "^0.6.0",
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/node": "^26.6.3",
+    "rollup": "^4.63.5",
+    "tslib": "^2.8.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
