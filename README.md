@@ -165,6 +165,6 @@ Pull requests are appreciated too. See [CONTRIBUTING.md](CONTRIBUTING.md) for th
 
 ## License
 
-[MIT](LICENSE) © 2026 Emre
+[MIT](LICENSE) © 2026 Recep Emre ÖRS
 
 *HWiNFO and Stream Deck are trademarks of their respective owners. This is an independent community project, not affiliated with or endorsed by REALiX (HWiNFO) or Elgato.*
