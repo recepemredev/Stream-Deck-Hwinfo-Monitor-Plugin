@@ -10,8 +10,15 @@ export interface SnapshotSource {
 
 type Listener = (snapshot: Snapshot | null) => void;
 
+/** What consumers need from the poller: the latest snapshot and change notifications. */
+export interface SnapshotFeed {
+	readonly snapshot: Snapshot | null;
+	/** Returns a function that removes the listener. */
+	subscribe(listener: Listener): () => void;
+}
+
 /** Single global polling loop shared by every key. Publishes a snapshot, or null while HWiNFO is unavailable. */
-export class Poller {
+export class Poller implements SnapshotFeed {
 	private readonly listeners = new Set<Listener>();
 	private timer: NodeJS.Timeout | null = null;
 	private latest: Snapshot | null = null;

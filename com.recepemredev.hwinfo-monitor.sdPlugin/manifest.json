@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"UUID": "com.recepemredev.hwinfo-monitor",
+	"Name": "HWiNFO Monitor",
+	"Version": "0.1.0.0",
+	"Author": "Emre",
+	"Description": "Live HWiNFO sensor readings, graphs and alerts on your Stream Deck.",
+	"URL": "https://github.com/recepemredev/streamdeck-hwinfo-monitor",
+	"Icon": "imgs/plugin",
+	"CodePath": "bin/plugin.js",
+	"Category": "HWiNFO Monitor",
+	"CategoryIcon": "imgs/category",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.6"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20"
+	},
+	"Actions": [
+		{
+			"UUID": "com.recepemredev.hwinfo-monitor.settings",
+			"Name": "Settings",
+			"Tooltip": "HWiNFO connection status, poll rate and alert thresholds.",
+			"Icon": "imgs/action",
+			"PropertyInspectorPath": "ui/settings.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/key"
+				}
+			]
+		}
+	]
+}

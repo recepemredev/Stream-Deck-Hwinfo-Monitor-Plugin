@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Settings</title>
+	<link rel="stylesheet" href="pi.css">
+</head>
+<body>
+	<div class="field">
+		<label for="pollMs">Poll rate</label>
+		<select id="pollMs">
+			<option value="250">250 ms</option>
+			<option value="500">500 ms</option>
+			<option value="1000">1 s</option>
+			<option value="2000">2 s</option>
+			<option value="5000">5 s</option>
+			<option value="10000">10 s</option>
+		</select>
+	</div>
+
+	<div class="section-title">Alert rules</div>
+	<div class="hint">Rules apply to every Sensor Reading key showing that sensor type. Press a key to snooze its alert.</div>
+	<div id="rules"></div>
+	<button id="add-rule" type="button" class="button">Add rule</button>
+
+	<script src="pi-common.js"></script>
+	<script src="settings.js"></script>
+</body>
+</html>

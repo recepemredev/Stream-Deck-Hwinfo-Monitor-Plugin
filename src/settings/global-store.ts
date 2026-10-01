@@ -9,8 +9,15 @@ export interface GlobalSettingsChannel {
 
 type Listener = (settings: GlobalSettings) => void;
 
+/** What keys need from the store: the current settings and change notifications. */
+export interface GlobalSettingsFeed {
+	readonly current: GlobalSettings;
+	/** Returns a function that removes the listener. */
+	subscribe(listener: Listener): () => void;
+}
+
 /** Holds the validated global settings and notifies listeners when the Property Inspector changes them. */
-export class GlobalSettingsStore {
+export class GlobalSettingsStore implements GlobalSettingsFeed {
 	private value: GlobalSettings = DEFAULT_GLOBAL_SETTINGS;
 	private readonly listeners = new Set<Listener>();
 
