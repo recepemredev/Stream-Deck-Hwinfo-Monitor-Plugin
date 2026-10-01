@@ -16,7 +16,7 @@
   "author": "Emre",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/recepemredev/streamdeck-hwinfo-monitor.git"
+    "url": "git+https://github.com/recepemredev/Stream-Deck-Hwinfo-Monitor-Plugin.git"
   },
   "private": true,
   "type": "module",

@@ -5,7 +5,7 @@
 	"Version": "0.1.0.0",
 	"Author": "Emre",
 	"Description": "Live HWiNFO sensor readings, graphs and alerts on your Stream Deck.",
-	"URL": "https://github.com/recepemredev/streamdeck-hwinfo-monitor",
+	"URL": "https://github.com/recepemredev/Stream-Deck-Hwinfo-Monitor-Plugin",
 	"Icon": "imgs/plugin",
 	"CodePath": "bin/plugin.js",
 	"Category": "HWiNFO Monitor",

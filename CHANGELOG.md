@@ -20,5 +20,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Property Inspector sensor picker with search, category filter and favorites.
 - Portable `.streamDeckPlugin` packaging via `npm run package`.
 
-[Unreleased]: https://github.com/recepemredev/streamdeck-hwinfo-monitor/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/recepemredev/streamdeck-hwinfo-monitor/releases/tag/v0.1.0
+[Unreleased]: https://github.com/recepemredev/Stream-Deck-Hwinfo-Monitor-Plugin/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/recepemredev/Stream-Deck-Hwinfo-Monitor-Plugin/releases/tag/v0.1.0

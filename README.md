@@ -65,7 +65,7 @@ Tip: enable **Auto Start** and **Minimize Sensors on Startup** so HWiNFO is alwa
 
 ### 2. Install the plugin
 
-Download `com.recepemredev.hwinfo-monitor.streamDeckPlugin` from the [Releases](https://github.com/recepemredev/streamdeck-hwinfo-monitor/releases) page and double-click it. Stream Deck asks for confirmation, then a new **HWiNFO Monitor** category appears in the action list.
+Download `com.recepemredev.hwinfo-monitor.streamDeckPlugin` from the [Releases](https://github.com/recepemredev/Stream-Deck-Hwinfo-Monitor-Plugin/releases) page and double-click it. Stream Deck asks for confirmation, then a new **HWiNFO Monitor** category appears in the action list.
 
 You can also build the package yourself, see [Building from source](#building-from-source).
 
@@ -96,8 +96,8 @@ Plugin logs are in `%APPDATA%\Elgato\StreamDeck\Plugins\com.recepemredev.hwinfo-
 Requires [Node.js](https://nodejs.org/) 20+ and Git.
 
 ```bash
-git clone https://github.com/recepemredev/streamdeck-hwinfo-monitor.git
-cd streamdeck-hwinfo-monitor
+git clone https://github.com/recepemredev/Stream-Deck-Hwinfo-Monitor-Plugin.git
+cd Stream-Deck-Hwinfo-Monitor-Plugin
 npm install
 npm test            # unit tests (node:test)
 npm run typecheck   # tsc --noEmit
