@@ -25,6 +25,21 @@
 	},
 	"Actions": [
 		{
+			"UUID": "com.recepemredev.hwinfo-monitor.reading",
+			"Name": "Sensor Reading",
+			"Tooltip": "Shows a HWiNFO sensor value.",
+			"Icon": "imgs/action",
+			"PropertyInspectorPath": "ui/reading.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/key"
+				}
+			]
+		},
+		{
 			"UUID": "com.recepemredev.hwinfo-monitor.settings",
 			"Name": "Settings",
 			"Tooltip": "HWiNFO connection status, poll rate and alert thresholds.",
