@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output (produced by `npm run build` / `npm run package`)
+*.sdPlugin/bin/
+*.sdPlugin/node_modules/
+dist/
+
+# Logs
+logs/
+*.sdPlugin/logs/
+*.log
+npm-debug.log*
+
+# Environment files (the plugin needs none; never commit real values)
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# AI assistant configuration, context and logs
+AGENTS.md
+.cursor/
+.cursorrules
+.aider*
+.windsurf*
+.github/copilot-instructions.md
+*.prompt.md
