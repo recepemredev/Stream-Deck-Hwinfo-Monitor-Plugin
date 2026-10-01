@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Composite Dashboard</title>
+	<link rel="stylesheet" href="pi.css">
+</head>
+<body>
+	<div class="field">
+		<label for="slotCount">Readings</label>
+		<select id="slotCount" data-setting="slotCount">
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+	</div>
+
+	<div class="field">
+		<label>Slot</label>
+		<div class="slot-editor">
+			<div id="tabs" class="tabs"></div>
+			<div id="picker" class="picker"></div>
+			<div class="field">
+				<label for="slotLabel">Label</label>
+				<input id="slotLabel" type="text" maxlength="24" placeholder="Sensor name">
+			</div>
+			<div class="field">
+				<label for="color">Color</label>
+				<div class="inline">
+					<label class="check"><input id="autoColor" type="checkbox"> Auto</label>
+					<input id="color" type="color" value="#ff8a3d">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fields"></div>
+
+	<script src="pi-common.js"></script>
+	<script src="sensor-picker.js"></script>
+	<script src="slot-tabs.js"></script>
+	<script src="display-fields.js"></script>
+	<script src="composite.js"></script>
+</body>
+</html>

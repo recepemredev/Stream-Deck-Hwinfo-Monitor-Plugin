@@ -40,6 +40,21 @@
 			]
 		},
 		{
+			"UUID": "com.recepemredev.hwinfo-monitor.composite",
+			"Name": "Composite Dashboard",
+			"Tooltip": "Shows 2-4 HWiNFO readings with overlaid graphs.",
+			"Icon": "imgs/action",
+			"PropertyInspectorPath": "ui/composite.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/key"
+				}
+			]
+		},
+		{
 			"UUID": "com.recepemredev.hwinfo-monitor.derived",
 			"Name": "Derived Metric",
 			"Tooltip": "Sum, average, max, min, delta or percent over HWiNFO readings.",
